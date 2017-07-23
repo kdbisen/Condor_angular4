@@ -1,0 +1,36 @@
+ 
+   
+<md-input-container >
+  <input mdInput placeholder="Domain name:"   #domainName > 
+</md-input-container>
+  
+  <button md-raised-button (click)="add(domainName.value); domainName.value=''">Add Domain</button>
+ 
+ <md-list>
+  <h3 md-subheader>Folders</h3>
+   <md-list-item *ngFor="let folder1 of notes">
+    <md-icon md-list-icon>folder</md-icon>
+    <h4 md-line>{{folder1.name}}</h4> 
+  </md-list-item>
+    <h3 md-subheader>Folders</h3>
+   <md-list-item *ngFor="let folder2 of domains">
+    
+    <h4 md-line>{{folder2.domainName}}</h4> 
+     <p md-line> {{folder2.created | date}} </p>
+  </md-list-item>
+</md-list>
+  
+<div>
+  <div>
+     <label>Id: </label>
+     <input [(ngModel)]="domain.id" />
+  </div>
+  <div>
+     <label>Name: </label>
+     <input [(ngModel)]="domain.domainName" />
+  </div>
+  <div>
+     <button (click)="addDomain()">Add</button>
+  </div>
+</div> 
+ 
